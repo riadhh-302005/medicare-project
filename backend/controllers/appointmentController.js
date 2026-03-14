@@ -16,7 +16,7 @@ const safeNumber = (v) => {
   const n = Number(v);
   return Number.isFinite(n) ? n : null;
 };
-
+//this function will create the frontend url
 const buildFrontendBase = (req) => {
   if (FRONTEND_URL) return FRONTEND_URL.replace(/\/$/, "");
   const origin = req.get("origin") || req.get("referer");
@@ -25,7 +25,7 @@ const buildFrontendBase = (req) => {
   if (host) return `${req.protocol || "http"}://${host}`.replace(/\/$/, "");
   return null;
 };
-
+//this function will get the user from clerk and return the user details 
 function resolveClerkUserId(req) {
   try {
     const auth = req.auth() || {};

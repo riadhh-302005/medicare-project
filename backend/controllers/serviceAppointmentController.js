@@ -278,7 +278,7 @@ export const confirmServicePayment = async (req, res) => {
   }
 };
 
-/* GET list */
+/* GET list *///to get service appointments 
 export const getServiceAppointments = async (req, res) => {
   try {
     const { serviceId, mobile, status, page: pageRaw = 1, limit: limitRaw = 50, search = "" } = req.query;
