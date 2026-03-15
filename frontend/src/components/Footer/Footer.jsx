@@ -12,6 +12,7 @@ import {
   Send,
   Stethoscope,
   Activity,
+  Github,
 } from "lucide-react";
 import logo from "../../assets/logo.png";
 import { footerStyles } from "../../assets/dummyStyles";
@@ -37,12 +38,12 @@ const Footer = () => {
 
   const socialLinks = [
     {
-      Icon: Facebook,
-      color: footerStyles.facebookColor,
-      name: "Facebook",
-      href: "https://www.facebook.com/people/Hexagon-Digital-Services/61567156598660/",
+      Icon: Github,
+      color: footerStyles.githubColor,
+      name: "Github",
+      href: "https://github.com/riadhh-302005",
     },
-    {
+    /*{
       Icon: Twitter,
       color: footerStyles.twitterColor,
       name: "Twitter",
@@ -53,18 +54,18 @@ const Footer = () => {
       color: footerStyles.instagramColor,
       name: "Instagram",
       href: "http://instagram.com/hexagondigitalservices?igsh=MWp2NG1oNTlibWVnZA%3D%3D",
-    },
+    },*/
     {
       Icon: Linkedin,
       color: footerStyles.linkedinColor,
       name: "LinkedIn",
-      href: "https://www.linkedin.com/company/hexagondigtial-services/",
+      href: "https://www.linkedin.com/in/ria-dhawan-a8a684294/",
     },
     {
       Icon: Youtube,
       color: footerStyles.youtubeColor,
       name: "YouTube",
-      href: "https://youtube.com/@hexagondigitalservices?si=lxEFYNCP42t6AoDJ",
+      href: "https://www.youtube.com/@RiaDhawan-y1l",
     },
   ];
 
@@ -117,21 +118,21 @@ const Footer = () => {
                 <div className={footerStyles.contactIconWrapper}>
                   <Phone className={footerStyles.contactIcon} />
                 </div>
-                <span className={footerStyles.contactText}>+91 8299431275</span>
+                <span className={footerStyles.contactText}>+91 6284778566</span>
               </div>
               <div className={footerStyles.contactItem}>
                 <div className={footerStyles.contactIconWrapper}>
                   <Mail className={footerStyles.contactIcon} />
                 </div>
                 <span className={footerStyles.contactText}>
-                  hexagonsservices@gmail.com
+                  30ria10@gmail.com
                 </span>
               </div>
               <div className={footerStyles.contactItem}>
                 <div className={footerStyles.contactIconWrapper}>
                   <MapPin className={footerStyles.contactIcon} />
                 </div>
-                <span className={footerStyles.contactText}>Lucknow, India</span>
+                <span className={footerStyles.contactText}>Amritsar, India</span>
               </div>
             </div>
           </div>
@@ -191,10 +192,6 @@ const Footer = () => {
                   className={footerStyles.emailInput}
                   aria-label="Email"
                 />
-                <button className={footerStyles.mobileSubscribeButton}>
-                  <Send className={footerStyles.mobileButtonIcon} />
-                  Subscribe
-                </button>
               </div>
 
               {/* Desktop newsletter */}
@@ -205,12 +202,6 @@ const Footer = () => {
                   className={footerStyles.desktopEmailInput}
                   aria-label="Email"
                 />
-                <button className={footerStyles.desktopSubscribeButton}>
-                  <Send className={footerStyles.desktopButtonIcon} />
-                  <span className={footerStyles.desktopButtonText}>
-                    Subscribe
-                  </span>
-                </button>
               </div>
 
               {/* Social icons */}
@@ -248,7 +239,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className={footerStyles.designerLink}
             >
-              Hexagon Digital Services
+              Ria Services
             </a>
           </div>
         </div>
