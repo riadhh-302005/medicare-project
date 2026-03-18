@@ -248,7 +248,8 @@ export default function DoctorDetailPage() {
 
       if (form.imageFile) fd.append("image", form.imageFile);
 
-      const API_BASE = "https://medicare-project-xv8a.onrender.com/api";
+      //const API_BASE = "https://medicare-project-xv8a.onrender.com/api";
+      const API_BASE = "https://medicare-project-xv8a.onrender.com";
 
       const res = await fetch(`${API_BASE}/doctors`, {
         method: "POST",
