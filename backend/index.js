@@ -15,8 +15,9 @@ const port = process.env.PORT || 4000;
 
 // ⭐ IMPORTANT: ENABLE CREDENTIALS FOR CLERK COOKIE SESSION
 const allowedOrigins = [
-  "http://localhost:5173", // user frontend
-  "http://localhost:5174", // admin dashboard
+  "http://localhost:5173",
+  "http://localhost:5174",
+  "https://medicare-project-ten.vercel.app",
 ];
 
 app.use(
