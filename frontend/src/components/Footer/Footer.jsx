@@ -31,9 +31,9 @@ const Footer = () => {
   const services = [
     { name: "Blood Pressure Check", href: "/services" },
     { name: "Blood Sugar Test", href: "/services" },
-    { name: "Full Blood Count", href: "/services" },
+    { name: "Thyroid Test", href: "/services" },
     { name: "X-Ray Scan", href: "/services" },
-    { name: "Blood Sugar Test", href: "/services" },
+    { name: "Vision Test", href: "/services" },
   ];
 
   const socialLinks = [
@@ -43,18 +43,7 @@ const Footer = () => {
       name: "Github",
       href: "https://github.com/riadhh-302005",
     },
-    /*{
-      Icon: Twitter,
-      color: footerStyles.twitterColor,
-      name: "Twitter",
-      href: "https://www.linkedin.com/company/hexagondigtial-services/",
-    },
-    {
-      Icon: Instagram,
-      color: footerStyles.instagramColor,
-      name: "Instagram",
-      href: "http://instagram.com/hexagondigitalservices?igsh=MWp2NG1oNTlibWVnZA%3D%3D",
-    },*/
+    
     {
       Icon: Linkedin,
       color: footerStyles.linkedinColor,
@@ -194,30 +183,20 @@ const Footer = () => {
                 />
               </div>
 
-              {/* Desktop newsletter */}
-              <div className={footerStyles.desktopNewsletterContainer}>
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className={footerStyles.desktopEmailInput}
-                  aria-label="Email"
-                />
-              </div>
-
               {/* Social icons */}
               <div className={footerStyles.socialContainer}>
-                {socialLinks.map(({ Icon, color, name, href }, index) => (
+                {socialLinks.map((link, index) => (
                   <a
-                    key={name}
-                    href={href}
+                    key={link.name}
+                    href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={footerStyles.socialLink}
-                    aria-label={name}
+                    aria-label={link.name}
                     style={{ animationDelay: `${index * 120}ms` }}
                   >
                     <div className={footerStyles.socialIconBackground} />
-                    <Icon className={`${footerStyles.socialIcon} ${color}`} />
+                    <link.Icon className={`${footerStyles.socialIcon} ${link.color}`} />
                   </a>
                 ))}
               </div>
@@ -233,14 +212,7 @@ const Footer = () => {
 
           <div className={footerStyles.designerText}>
             <span>Designed by</span>
-            <a
-              href="https://hexagondigitalservices.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={footerStyles.designerLink}
-            >
-              Ria Services
-            </a>
+              Ria 
           </div>
         </div>
       </div>

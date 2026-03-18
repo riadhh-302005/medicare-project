@@ -9,7 +9,8 @@ import {
   Ribbon,
   ShieldUser,
 } from "lucide-react";
-import banner from "../../assets/BannerImg.png";
+import banner from "../../assets/Banner.png";
+// Make sure Banner.png exists in src/assets/ folder
 import { useNavigate } from "react-router-dom";
 import { bannerStyles } from "../../assets/dummyStyles";
 
@@ -96,7 +97,7 @@ const Banner = () => {
                   className={`${bannerStyles.featureItem} ${bannerStyles.featureBorderPurple}`}
                 >
                   <Users className={bannerStyles.featureIcon} />
-                  <span className={bannerStyles.featureText}>500+ Doctors</span>
+                  <span className={bannerStyles.featureText}>50+ Doctors</span>
                 </div>
               </div>
 
@@ -115,7 +116,7 @@ const Banner = () => {
                 </button>
 
                 <button
-                  onClick={() => (window.location.href = "tel:8299431275")}
+                  onClick={() => (window.location.href = "tel:6284778566")}
                   aria-label="Emergency Call"
                   className={bannerStyles.emergencyButton}
                 >
@@ -138,6 +139,7 @@ const Banner = () => {
                     src={banner}
                     alt="Professional Healthcare Team"
                     className={bannerStyles.image}
+                    onError={(e) => console.error("Failed to load image:", banner, e)}
                   />
                 </div>
               </div>
