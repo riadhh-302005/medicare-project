@@ -1,6 +1,6 @@
 // src/App.jsx
 import React, { useEffect, useState } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 
 // Pages
 import Home from "./pages/Home/Home";
@@ -105,6 +105,7 @@ const App = () => {
 
           {/* Doctor Admin */}
           <Route path="/doctor-admin/:id" element={<DHome />} />
+          <Route path="*" element={<Navigate to="/appointments" replace />} />
           <Route path="/doctor-admin/:id/appointments" element={<List />} />
           <Route
             path="/doctor-admin/:id/profile/edit"

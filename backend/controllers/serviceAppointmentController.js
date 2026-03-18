@@ -36,10 +36,12 @@ function parseTimeString(timeStr) {
 }
 
 const buildFrontendBase = (req) => {
+  // Prefer the request origin (most accurate in a browser flow), fall back to env.
+  const origin = req.get("origin") || req.get("referer") || null;
+  if (origin) return origin.replace(/\/$/, "");
   const env = process.env.FRONTEND_URL;
   if (env) return env.replace(/\/$/, "");
-  const origin = req.get("origin") || req.get("referer") || null;
-  return origin ? origin.replace(/\/$/, "") : null;
+  return null;
 };
 
 function resolveClerkUserId(req) {
@@ -252,7 +254,7 @@ export const confirmServicePayment = async (req, res) => {
           status: "Confirmed",
         },
       },
-      { new: true }
+      { returnDocument: "after" }
     );
 
     if (!appt && session.metadata?.appointmentId) {
@@ -266,7 +268,7 @@ export const confirmServicePayment = async (req, res) => {
             status: "Confirmed",
           },
         },
-        { new: true }
+        { returnDocument: "after" }
       );
     }
 

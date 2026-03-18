@@ -18,9 +18,10 @@ const safeNumber = (v) => {
 };
 //this function will create the frontend url
 const buildFrontendBase = (req) => {
-  if (FRONTEND_URL) return FRONTEND_URL.replace(/\/$/, "");
+  // Prefer the request origin (most accurate in a browser flow), fall back to env.
   const origin = req.get("origin") || req.get("referer");
   if (origin) return origin.replace(/\/$/, "");
+  if (FRONTEND_URL) return FRONTEND_URL.replace(/\/$/, "");
   const host = req.get("host");
   if (host) return `${req.protocol || "http"}://${host}`.replace(/\/$/, "");
   return null;
@@ -339,7 +340,7 @@ export const confirmPayment = async (req, res) => {
         status: "Confirmed",
         paidAt: new Date(),
       },
-      { new: true }
+      { returnDocument: "after" }
     );
 
     // fallback: try match via metadata (doctorId + mobile + patientName)
@@ -360,7 +361,7 @@ export const confirmPayment = async (req, res) => {
             paidAt: new Date(),
             sessionId: session_id,
           },
-          { new: true }
+          { returnDocument: "after" }
         );
       }
     }
@@ -378,7 +379,7 @@ export const confirmPayment = async (req, res) => {
           paidAt: new Date(),
           sessionId: session_id,
         },
-        { new: true }
+        { returnDocument: "after" }
       );
     }
 

@@ -56,7 +56,14 @@ const VerifyPaymentPage = () => {
     };
   }, [location, navigate]);
 
-  return null;
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-white text-gray-900">
+      <div className="text-center">
+        <div className="mb-2 text-lg font-semibold">Finalizing payment...</div>
+        <div className="text-sm text-gray-600">Please wait while we confirm your transaction.</div>
+      </div>
+    </div>
+  );
 };
 
 export default VerifyPaymentPage;
