@@ -16,8 +16,9 @@ const port = process.env.PORT || 4000;
 // ⭐ IMPORTANT: ENABLE CREDENTIALS FOR CLERK COOKIE SESSION
 const allowedOrigins = [
   "http://localhost:5173",
-  "http://localhost:5174",
   "https://medicare-project-ten.vercel.app",
+  "https://medicare-project-tuwu.vercel.app",
+  "https://medicare-project-tuwu-git-main-rias-projects-fb1aa269.vercel.app"
 ];
 
 // app.use(
@@ -36,13 +37,17 @@ const allowedOrigins = [
 //     allowedHeaders: ["Content-Type", "Authorization"],
 //   })
 // );
+
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://medicare-project-ten.vercel.app",
-    "https://medicare-project-tuwu.vercel.app",
-    "https://medicare-project-tuwu-git-main-rias-projects-fb1aa269.vercel.app"
-  ],
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error("Not allowed by CORS"));
+  },
   credentials: true
 }));
 
