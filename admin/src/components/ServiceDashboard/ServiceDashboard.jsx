@@ -6,7 +6,6 @@
 //    or (for cross-tab) write to localStorage:
 //      localStorage.setItem('service_bookings_updated', Date.now())
 //  - This component also exposes window.refreshServices() for convenience.
-
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   ClipboardList,
