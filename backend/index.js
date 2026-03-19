@@ -37,7 +37,12 @@ const allowedOrigins = [
 //   })
 // );
 app.use(cors({
-  origin: "*",
+  origin: [
+    "http://localhost:5173",
+    "https://medicare-project-ten.vercel.app",
+    "https://medicare-project-tuwu.vercel.app",
+    "https://medicare-project-tuwu-git-main-rias-projects-fb1aa269.vercel.app"
+  ],
   credentials: true
 }));
 
