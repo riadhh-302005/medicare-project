@@ -74,26 +74,6 @@ npm start
 
 [Visit Website](https://medicare-project-ten.vercel.app)
 
-## 📸 Project Screenshots
-
-### 🏠 Home Page
-![Home Page](./screenshots/home.png)
-
-### 👨‍⚕️ Doctors Page
-![Doctors Page](./screenshots/doctors.png)
-
-### 🩺 Diagnostic Services
-![Services Page](./screenshots/services.png)
-
-### 📞 Contact Page
-![Contact Page](./screenshots/contact.png)
-
-### 📅 Appointment Booking
-![Appointment Booking](./screenshots/appointment.png)
-
-### 🛠️ Admin Dashboard
-![Admin Dashboard](./screenshots/dashboard.png)
-
 ## 👩‍💻 Author
 
 Ria Dhawan
